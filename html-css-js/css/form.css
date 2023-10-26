@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    --primary-color: rgba(0, 25, 54, 255);
+    --secondary-color: rgba(250, 162, 27, 255);
+
+    font-family: "Helvetica", cursive;
+    height: 100lvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#task-frontend {
+    max-width: 400px;
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+#logo {
+    height: 100px;
+    width: 100px;
+}
+
+.basic-title {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.basic-title::after {
+    content: '';
+    width: 50px;
+    position: absolute;
+    border-radius: 90px;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 3px;
+    background-color: var(--secondary-color);
+}
+
+#task-frontend form {
+    padding-top: 10px;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: end;
+    gap: 20px;
+}
+
+.form-item {
+    width: 100%;
+}
+
+.form-item>label {
+    color: var(--primary-color);
+    font-size: 0.875rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-item>input {
+    width: 100%;
+    margin-top: 5px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid var(--primary-color);
+}
+
+.form-item input:focus {
+    outline: none;
+    border: 3px solid var(--secondary-color);
+}
+
+#task-frontend input[type="submit"] {
+    border: none;
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 10px 30px;
+    border-radius: 10px;
+}
+
+#task-frontend input[type="submit"]:hover {
+    filter: brightness(95%);
+    cursor: pointer;
+}
+
+#interests {
+    margin-top: 5px;
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.interests-item {
+    width: calc((100% - 15px) / 4);
+}
+
+.interests-item span {
+    color: var(--primary-color);
+    background-color: gainsboro;
+    text-align: center;
+    border-radius: 10px;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+    display: block;
+    padding: 10px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.interests-item:hover {
+    filter: brightness(95%);
+}
+
+.interests-item input {
+    display: none;
+}
+
+.interests-item input:checked+span {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.error {
+    color: #ef4444;
+    font-size: 0.8rem;
+}

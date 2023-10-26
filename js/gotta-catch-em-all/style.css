@@ -1,0 +1,98 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+h1 {
+    margin-bottom: 16px;
+}
+
+main {
+    width: 100%;
+    max-width: 960px;
+    margin: auto;
+    padding: 40px 0px;
+}
+
+label {
+    padding: 10px 20px;
+}
+
+
+input[type=text] {
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 2px solid lightgray;
+}
+
+input[type=checkbox] {
+    display: none;
+}
+
+label:has(> input[type=checkbox]:checked) {
+    background-color: darkorchid;
+    border-radius: 10px;
+    color: white;
+}
+
+
+button {
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background-color: darkorchid;
+    color: white;
+}
+
+#form-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px;
+}
+
+#form-filters>div {
+    width: 100%;
+    margin-top: 3px;
+}
+
+.pokemons {
+    display: grid;
+    padding: 20px 0px;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-flow: row dense;
+    gap: 10px;
+}
+
+.pokemons-item {
+    width: 100%;
+    border: 2px solid lightgray;
+    display: flex;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.pokemons-item>.pokemons-item-info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 10px;
+}
+
+.pokemons-item>.pokemons-item-id {
+    position: absolute;
+    font-size: 6rem;
+    bottom: 0px;
+    color: lightgray;
+    right: 0px;
+    transform: rotate(30deg);
+}
+
+.pokemons-item>.pokemons-item-info>.pokemons-item-types {
+    width: 100%;
+    display: flex;
+    gap: 10px
+}
