@@ -9,14 +9,15 @@ board.addEventListener("click", ({ target }) => {
     if (classes.includes("tile") && classes.length !== 1) return;
 
     const idx = tiles.indexOf(target);
+    if (idx >= 0) {
+        target.classList.add(`tile-${turn}`);
+        symbols[idx % 3][Math.floor(idx / 3)] = turn;
+        turn = turn === "x" ? "o" : "x";
 
-    target.classList.add(`tile-${turn}`);
-    symbols[idx % 3][Math.floor(idx / 3)] = turn;
-    turn = turn === "x" ? "o" : "x";
+        displayTurn(turn);
 
-    displayTurn(turn);
-
-    checkWin();
+        checkWin();
+    }
 });
 
 function displayTurn(turn) {
